@@ -26,10 +26,10 @@ function App() {
       className='mx-auto flex min-h-dvh w-full min-w-dvw flex-col items-center bg-linear-to-r from-[#F9FAFB] to-[#D2D6DB] p-4'
     >
       <div className='flex w-full flex-1 flex-col items-center justify-center rounded-md bg-white'>
-        <main className='flex flex-col items-center gap-8'>
+        <main className='flex w-full flex-col items-center gap-8'>
           <h1 className='text-base text-neutral-600'>Used by teams that you love</h1>
           {/* logo marquee */}
-          <div className='flex w-full overflow-hidden'>
+          <div className='selection-none flex w-full overflow-hidden'>
             <div className='animate-marquee flex shrink-0 flex-row gap-8'>
               {logos.map(logo => (
                 <div
