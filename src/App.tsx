@@ -29,19 +29,55 @@ function App() {
         <main className='flex flex-col items-center gap-8'>
           <h1 className='text-base text-neutral-600'>Used by teams that you love</h1>
           {/* logo marquee */}
-          <div className='flex flex-row gap-8'>
-            {logos.map(logo => (
-              <div
-                key={logo.alt}
-                className='p-6'
-              >
-                <img
-                  src={logo.src}
-                  alt={logo.alt}
-                  className='h-12 w-auto'
-                />
-              </div>
-            ))}
+          <div className='flex w-full overflow-hidden'>
+            <div className='animate-marquee flex shrink-0 flex-row gap-8'>
+              {logos.map(logo => (
+                <div
+                  key={logo.alt}
+                  className='p-6'
+                >
+                  <img
+                    src={logo.src}
+                    alt={logo.alt}
+                    className='h-12 w-auto'
+                  />
+                </div>
+              ))}
+            </div>
+            <div
+              className='animate-marquee flex shrink-0 flex-row gap-8'
+              aria-hidden='true'
+            >
+              {logos.map(logo => (
+                <div
+                  key={logo.alt}
+                  className='p-6'
+                >
+                  <img
+                    src={logo.src}
+                    alt={logo.alt}
+                    className='h-12 w-auto'
+                  />
+                </div>
+              ))}
+            </div>
+            <div
+              className='animate-marquee flex shrink-0 flex-row gap-8'
+              aria-hidden='true'
+            >
+              {logos.map(logo => (
+                <div
+                  key={logo.alt}
+                  className='p-6'
+                >
+                  <img
+                    src={logo.src}
+                    alt={logo.alt}
+                    className='h-12 w-auto'
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </main>
       </div>
