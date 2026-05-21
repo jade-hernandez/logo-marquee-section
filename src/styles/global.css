@@ -1,6 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 
+/*
+  @theme and @utility are Tailwind CSS v4 directives.
+  They may be flagged as unknown at-rules by the VS Code CSS language server,
+  as it does not yet fully support Tailwind CSS v4 syntax.
+  This is a known issue: https://github.com/tailwindlabs/tailwindcss-intellisense/issues/1565
+*/
+
 @theme {
   --animate-marquee: marquee 30s linear infinite;
 
