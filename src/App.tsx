@@ -27,7 +27,7 @@ function LogoStripe({ "aria-hidden": ariaHidden = false }: LogoStripeProps) {
   return (
     <div
       aria-hidden={ariaHidden}
-      className='animate-marquee group-hover:animate-pause flex shrink-0 flex-row gap-8 first:pl-12'
+      className='animate-marquee group-hover:animate-pause flex shrink-0 flex-row gap-2 first:pl-12 lg:gap-8'
     >
       {logos.map(logo => (
         <div
@@ -37,7 +37,7 @@ function LogoStripe({ "aria-hidden": ariaHidden = false }: LogoStripeProps) {
           <img
             src={logo.src}
             alt={logo.alt}
-            className='h-12 w-auto'
+            className='h-12 w-auto text-neutral-900'
           />
         </div>
       ))}
@@ -51,7 +51,7 @@ function App() {
       id='page-body'
       className='mx-auto flex min-h-dvh w-full min-w-dvw flex-col items-center bg-linear-to-r from-[#F9FAFB] to-[#D2D6DB] p-4'
     >
-      <div className='flex w-full flex-1 flex-col items-center justify-center rounded-md bg-white'>
+      <div className='flex w-full flex-1 flex-col items-center justify-center rounded-md bg-white px-15.5 md:px-8.25 lg:px-2'>
         <main className='flex w-full flex-col items-center gap-8'>
           <h1
             id='marquee-heading'
