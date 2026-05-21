@@ -23,11 +23,11 @@ type LogoStripeProps = {
   "aria-hidden"?: boolean;
 };
 
-function LogoStripe({ "aria-hidden": ariaHidden }: LogoStripeProps) {
+function LogoStripe({ "aria-hidden": ariaHidden = false }: LogoStripeProps) {
   return (
     <div
       aria-hidden={ariaHidden}
-      className='animate-marquee flex shrink-0 flex-row gap-8'
+      className='animate-marquee group-hover:animate-pause flex shrink-0 flex-row gap-8 first:pl-12'
     >
       {logos.map(logo => (
         <div
@@ -59,8 +59,7 @@ function App() {
           >
             Used by teams that you love
           </h1>
-          {/* logo marquee */}
-          <div className='flex w-full overflow-hidden select-none'>
+          <div className='group flex w-full overflow-hidden select-none'>
             <LogoStripe />
             <LogoStripe aria-hidden />
             <LogoStripe aria-hidden />
