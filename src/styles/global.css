@@ -24,6 +24,12 @@
   animation-play-state: paused;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation-play-state: paused;
+  }
+}
+
 :root {
   font-synthesis: none;
   text-rendering: optimizeLegibility;
