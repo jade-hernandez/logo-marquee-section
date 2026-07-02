@@ -8,16 +8,14 @@ A responsive logo marquee section built as part of the [GreatFrontEnd Projects](
 
 ## Challenge
 
-This project is part of a GreatFrontEnd challenge that focuses on implementing a seamless infinite scrolling logo marquee using pure CSS animations — no JavaScript animation logic involved.
+This project is part of a GreatFrontEnd challenge that focuses on implementing a seamless infinite scrolling logo marquee.
 The core challenge is achieving a seamless loop: three instances of the same logo strip animate in sync so that as one strip exits the viewport, the next one covers the empty space instantly, creating the illusion of infinite scrolling.
 
 ## Features
 
-- Seamless infinite marquee loop via pure CSS `@keyframes` and `translateX`
+- Seamless infinite marquee loop via `@keyframes` and `translateX`
 - Custom Tailwind v4 animation registered with `@theme` and `@utility` directives
 - Pause on hover via Tailwind's `group` and `group-hover:animate-pause` pattern
-- Respects `prefers-reduced-motion` system preference — animation is paused automatically for users who have enabled reduced motion in their OS settings
-- Optimized font loading via `<link rel="preconnect">` in the HTML head instead of CSS `@import`
 - Care for A11y — semantic HTML, meaningful `alt` attributes on all logos, duplicate strips marked `aria-hidden="true"` so screen readers only announce the logo list once
 
 ## Stack
