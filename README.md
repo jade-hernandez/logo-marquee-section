@@ -8,31 +8,34 @@ A responsive logo marquee section built as part of the [GreatFrontEnd Projects](
 
 ## Challenge
 
-This project is part of a GreatFrontEnd challenge that focuses on implementing a seamless infinite scrolling logo marquee.
-The core challenge is achieving a seamless loop: three instances of the same logo strip animate in sync so that as one strip exits the viewport, the next one covers the empty space instantly, creating the illusion of infinite scrolling.
+This is a GreatFrontEnd Projects challenge focused on building an infinitely scrolling logo strip with pure CSS. The core technical requirement is looping three copies of the same logo strip so that as one exits the viewport, the next is already in position, with no visible seam or jump at the loop boundary.
 
 ## Features
 
-- Seamless infinite marquee loop via `@keyframes` and `translateX`
-- Custom Tailwind v4 animation registered with `@theme` and `@utility` directives
-- Pause on hover via Tailwind's `group` and `group-hover:animate-pause` pattern
-- Care for A11y — semantic HTML, meaningful `alt` attributes on all logos, duplicate strips marked `aria-hidden="true"` so screen readers only announce the logo list once
+- **Infinite marquee loop** — a single `@keyframes` animation translates three duplicated `LogoStripe` instances so the strip repeats without a visible reset.
+- **Custom Tailwind v4 animation** — registered through `@theme` (the keyframes) and `@utility` (the pause state) instead of arbitrary values.
+- **Hover-to-pause** — Tailwind's `group` and `group-hover:animate-pause` pattern stops the animation on hover with no JS or event listeners.
+- **Reduced-motion support** — a `prefers-reduced-motion` media query pauses the animation for users who have it enabled.
+- **Care for A11y** — semantic HTML, ARIA attributes, WAI-ARIA patterns.
 
 ## Stack
 
 - **React 19** + **TypeScript**
 - **Tailwind CSS v4**
 - **Vite** — No SSR or complex routing needed here — Vite is the straightforward choice.
-- **clsx** + **tailwind-merge** — To prevent CSS precedence issues.
+- **clsx** + **tailwind-merge** — Conditional class merging without specificity conflicts.
 
 ## Project Structure
 
 ```
 src/
 ├── images/          # Logo assets (.webp)
+├── lib/
+│   └── cn.ts         # clsx + tailwind-merge className helper
 ├── styles/
-│   └── global.css   # Tailwind imports, @theme, @utility, global styles
-└── App.tsx          # LogoStripe component and App layout
+│   └── global.css   # Tailwind v4 imports, @theme/@utility marquee animation, reduced-motion handling
+├── App.tsx           # LogoStripe component and page layout
+└── main.tsx          # React root render entry point
 ```
 
 ## Getting Started
